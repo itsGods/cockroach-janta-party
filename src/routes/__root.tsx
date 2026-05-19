@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Cockroach Janta Party" },
+      { name: "description", content: "Cockroach Janta Party - Voice of the Lazy & Unemployed" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Cockroach Janta Party" },
+      { property: "og:description", content: "Cockroach Janta Party - Voice of the Lazy & Unemployed" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Cockroach Janta Party" },
+      { name: "twitter:description", content: "Cockroach Janta Party - Voice of the Lazy & Unemployed" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a380b6a1-6ede-46b3-9222-ce015545f0a4" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a380b6a1-6ede-46b3-9222-ce015545f0a4" },
     ],
     links: [
       {
