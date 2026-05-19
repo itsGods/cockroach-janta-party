@@ -1,14 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Cockroach Janta Party (CJP) — We Survive Everything" },
-      { name: "description", content: "Cockroach Janta Party — India ki sabse zinda political party. Bold, satirical, unstoppable. Join the revolution that refuses to die." },
+      { title: "Cockroach Janta Party — Voice of the Lazy & Unemployed" },
+      { name: "description", content: "A political party for the people the system forgot to count. Five demands. Zero sponsors. One large, stubborn swarm. They tried to step on us. We came back." },
       { property: "og:title", content: "Cockroach Janta Party (CJP)" },
-      { property: "og:description", content: "We Survive Everything — Even Indian Politics. Join the Cockroach Army." },
+      { property: "og:description", content: "Voice of the Lazy & Unemployed. Five demands. Zero sponsors. They tried to step on us — we came back." },
     ],
   }),
 });
@@ -55,29 +54,38 @@ function Cockroach({ className = "", size = 200 }: { className?: string; size?: 
 }
 
 const manifesto = [
-  { hi: "हर मोहल्ले में मुफ्त WiFi", en: "Free WiFi for every mohalla", icon: "📶" },
-  { hi: "VIP कल्चर खत्म — नेता ऑटो में चलेंगे", en: "No more VIP culture — leaders travel in auto", icon: "🛺" },
-  { hi: "करप्शन को भी क्रश कर देंगे", en: "We'll crush corruption like cockroaches", icon: "🦟" },
-  { hi: "युवाओं को नौकरी, सिर्फ वादे नहीं", en: "Jobs for the youth, not just promises", icon: "💼" },
-  { hi: "India को बनाएंगे Survive-proof", en: "Make India Survive-proof", icon: "🛡️" },
+  {
+    title: "No Rajya Sabha for retired CJIs",
+    body: "If the CJP comes to power, no Chief Justice shall be granted a Rajya Sabha seat as a post-retirement reward.",
+  },
+  {
+    title: "Vote tampering = UAPA",
+    body: "If any legit vote is deleted — in a CJP or opposition-ruled state — the CEC shall be arrested under UAPA. Taking away voting rights of citizens is no less than terrorism.",
+  },
+  {
+    title: "50% reservation for women",
+    body: "Women shall receive 50% reservation, not 33%, without increasing the strength of Parliament. 50% of all Cabinet positions shall be reserved for women.",
+  },
+  {
+    title: "Cancel Ambani & Adani media licences",
+    body: "All media houses owned by Ambani and Adani shall have their licences cancelled to make way for truly independent media. Bank accounts of Godi media anchors shall be investigated.",
+  },
+  {
+    title: "20-year ban on defectors",
+    body: "Any MLA or MP who defects from one party to another shall be barred from contesting elections — and from holding any public office — for a period of 20 years.",
+  },
 ];
 
-const memes = [
-  { title: "5-Year Survival Streak", body: "Har sarkar aayi, hum tab bhi the. Hum aaj bhi hain. Hum kal bhi rahenge." },
-  { title: "Nuclear Test Approved ✅", body: "Scientists confirm: only cockroaches and CJP survive everything." },
-  { title: "GDP: Garib Desi Praani", body: "We measure growth in surviving units, not rupees." },
-  { title: "Manifesto Leak 📜", body: "Opposition stole it. We don't care — we'll write a new one in 5 minutes." },
+const eligibility = [
+  { id: "01", title: "Unemployed", body: "By force, by choice, or by principle. We don't ask." },
+  { id: "02", title: "Lazy", body: "Physically only. The brain may continue to spiral." },
+  { id: "03", title: "Chronically online", body: "Minimum 11 hours a day, including bathroom breaks." },
+  { id: "04", title: "Can rant professionally", body: "As long as the content is sharp, honest, and points at something that actually matters." },
 ];
+
+const JOIN_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdYx7uN2ozYteN7kK_Ne5a90yxZhrmp_wlhVJGaPhK6SuUmjQ/viewform";
 
 function Index() {
-  const [form, setForm] = useState({ name: "", phone: "", city: "", why: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <div className="cjp-root">
       <style>{cjpStyles}</style>
@@ -93,10 +101,11 @@ function Index() {
             </span>
           </a>
           <div className="cjp-nav-links">
-            <a href="#about">About</a>
+            <a href="#vision">Vision</a>
             <a href="#manifesto">Manifesto</a>
-            <a href="#memes">Achievements</a>
-            <a href="#join" className="cjp-nav-cta">Join</a>
+            <a href="#eligibility">Eligibility</a>
+            <a href="#contact">Contact</a>
+            <a href={JOIN_FORM_URL} target="_blank" rel="noreferrer" className="cjp-nav-cta">Join →</a>
           </div>
         </div>
       </nav>
@@ -107,27 +116,28 @@ function Index() {
         <div className="cjp-roach-pattern" aria-hidden />
         <div className="cjp-hero-inner">
           <div className="cjp-hero-text">
-            <span className="cjp-badge">Est. कभी भी • Survives Forever</span>
+            <span className="cjp-badge">Party Launch · Volume 1, Edition 1</span>
             <h1>
-              <span className="cjp-hi">कॉकरोच जनता पार्टी</span>
-              <span className="cjp-en">Cockroach Janta Party</span>
+              <span className="cjp-hi">Voice of the</span>
+              <span className="cjp-en">Lazy &amp; Unemployed.</span>
             </h1>
             <p className="cjp-tag">
-              <strong>"We Survive Everything — Even Indian Politics"</strong>
-              <span>हम हर सरकार, हर नीति, हर संकट से बच जाते हैं।</span>
+              <strong>A political party for the people the system forgot to count.</strong>
+              <span>Five demands. Zero sponsors. One large, stubborn swarm.</span>
             </p>
             <div className="cjp-cta-row">
-              <a href="#join" className="cjp-btn cjp-btn-primary">
-                Join the Revolution that refuses to die
+              <a href={JOIN_FORM_URL} target="_blank" rel="noreferrer" className="cjp-btn cjp-btn-primary">
+                Join the Party →
               </a>
               <a href="#manifesto" className="cjp-btn cjp-btn-ghost">
-                Read Manifesto →
+                Read the Manifesto
               </a>
             </div>
             <div className="cjp-stats">
-              <div><strong>∞</strong><span>Years Survived</span></div>
-              <div><strong>0</strong><span>VIP Convoys</span></div>
-              <div><strong>1.4B</strong><span>Future Members</span></div>
+              <div><strong>5</strong><span>Demands</span></div>
+              <div><strong>0</strong><span>Corporate Donors</span></div>
+              <div><strong>∞</strong><span>Patience</span></div>
+              <div><strong>1</strong><span>Founder, no PA</span></div>
             </div>
           </div>
           <div className="cjp-hero-mascot">
@@ -135,34 +145,49 @@ function Index() {
               <Cockroach size={320} />
             </div>
             <div className="cjp-shadow" />
+            <div className="cjp-quote">
+              "They tried to step on us.<br/><strong>We came back.</strong>"
+            </div>
+          </div>
+        </div>
+        <div className="cjp-marquee" aria-hidden>
+          <div className="cjp-marquee-track">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <span key={i}>Together We Survive ✦ Stronger Together ✦ Unity · Resilience · Progress ✦ You Cannot Squash A Movement ✦ </span>
+            ))}
           </div>
         </div>
       </header>
 
-      {/* ABOUT */}
-      <section id="about" className="cjp-section">
+      {/* VISION */}
+      <section id="vision" className="cjp-section">
         <div className="cjp-container">
-          <h2 className="cjp-h2"><span>क्यों</span> Cockroach Janta Party?</h2>
+          <p className="cjp-eyebrow">Chapter One</p>
+          <h2 className="cjp-h2">Our Movement's <span>Vision.</span></h2>
           <p className="cjp-lede">
-            Because every government changes, every promise breaks, every scheme expires — but the
-            common man, like the cockroach, <em>keeps going</em>. We are the party of the unkillable.
+            We are not here to set up another PM CARES, holiday in Davos on the taxpayer's salary slip,
+            or rebrand corruption as "strategic spending." We are here to ask — loudly, repeatedly,
+            in writing — where the money went.
           </p>
 
           <div className="cjp-grid-3">
-            <article className="cjp-card">
-              <div className="cjp-card-icon">🛡️</div>
-              <h3>Resilience</h3>
-              <p>Mehengai aayi, hum bache. Lockdown aaya, hum bache. Election aaya, hum vote diye. Phir bhi bache.</p>
-            </article>
             <article className="cjp-card cjp-card-accent">
+              <div className="cjp-card-icon">🎯</div>
+              <h3>Our Mission</h3>
+              <p>
+                Build a party for the young people who keep getting called lazy, chronically online,
+                and — most recently — cockroaches. That's it. That's the mission. The rest is satire.
+              </p>
+            </article>
+            <article className="cjp-card">
+              <div className="cjp-card-icon">🗣️</div>
+              <h3>Our Method</h3>
+              <p>Ask — loudly, repeatedly, in writing — where the money went. Then ask again next week.</p>
+            </article>
+            <article className="cjp-card">
               <div className="cjp-card-icon">🪳</div>
               <h3>Our Symbol</h3>
-              <p>The cockroach — 320 million years of survival. Adaptable, fearless, common. Bilkul aam aadmi jaisa.</p>
-            </article>
-            <article className="cjp-card">
-              <div className="cjp-card-icon">⚡</div>
-              <h3>Adaptability</h3>
-              <p>Naya tax? Adjust. Naya rule? Adjust. Naya neta? Adjust. We don't break — we evolve.</p>
+              <p>They called us cockroaches. We made it the logo. You cannot squash a movement.</p>
             </article>
           </div>
         </div>
@@ -171,16 +196,16 @@ function Index() {
       {/* MANIFESTO */}
       <section id="manifesto" className="cjp-section cjp-section-alt">
         <div className="cjp-container">
-          <h2 className="cjp-h2"><span>हमारा</span> Manifesto</h2>
-          <p className="cjp-lede">Sharp. Funny. Actually doable. (Mostly.)</p>
+          <p className="cjp-eyebrow">The Demands</p>
+          <h2 className="cjp-h2">Five Demands. <span>No Negotiation.</span></h2>
+          <p className="cjp-lede">Sharp. Specific. In writing. Filed under General Disgruntlement.</p>
           <ol className="cjp-manifesto">
             {manifesto.map((m, i) => (
               <li key={i} style={{ animationDelay: `${i * 0.08}s` }}>
                 <span className="cjp-mani-num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="cjp-mani-icon">{m.icon}</span>
                 <div>
-                  <strong>{m.hi}</strong>
-                  <span>{m.en}</span>
+                  <strong>{m.title}</strong>
+                  <span>{m.body}</span>
                 </div>
               </li>
             ))}
@@ -188,76 +213,68 @@ function Index() {
         </div>
       </section>
 
-      {/* MEMES */}
-      <section id="memes" className="cjp-section">
+      {/* ELIGIBILITY */}
+      <section id="eligibility" className="cjp-section">
         <div className="cjp-container">
-          <h2 className="cjp-h2"><span>हमारी</span> Achievements <span className="cjp-wink">(allegedly)</span></h2>
+          <p className="cjp-eyebrow">Membership</p>
+          <h2 className="cjp-h2">Are you eligible <span>to join?</span></h2>
+          <p className="cjp-lede">
+            We do not check religion, caste, or gender. We do, however, have four (4) standards.
+          </p>
           <div className="cjp-grid-2">
-            {memes.map((m, i) => (
-              <article key={i} className="cjp-meme">
+            {eligibility.map((e) => (
+              <article key={e.id} className="cjp-meme">
                 <header>
                   <span className="cjp-meme-dot" />
                   <span className="cjp-meme-dot" />
                   <span className="cjp-meme-dot" />
-                  <small>cjp-news.in</small>
+                  <small>REQ / {e.id}</small>
                 </header>
-                <h3>{m.title}</h3>
-                <p>{m.body}</p>
+                <h3>{e.title} <span style={{ color: "#138a3f" }}>✓</span></h3>
+                <p>{e.body}</p>
               </article>
             ))}
           </div>
+          <p className="cjp-fineprint">
+            Membership is free, lifelong, and revocable only by you.
+            No fees. No selfies with the leader. No "missed call to register."
+          </p>
         </div>
       </section>
 
-      {/* JOIN */}
-      <section id="join" className="cjp-section cjp-section-alt">
+      {/* CONTACT */}
+      <section id="contact" className="cjp-section cjp-section-alt">
         <div className="cjp-container cjp-join-wrap">
           <div>
-            <h2 className="cjp-h2"><span>Cockroach</span> Army में शामिल हो</h2>
+            <p className="cjp-eyebrow">Get in touch</p>
+            <h2 className="cjp-h2">Connect <span>with us.</span></h2>
             <p className="cjp-lede">
-              Fill the form. Get your virtual antennae. Survive forever with us.
+              Want to join, volunteer, complain, or send a meme? Use the form. We read everything.
+              We reply to most things.
             </p>
-            <a
-              href="https://chat.whatsapp.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="cjp-btn cjp-btn-whatsapp"
-            >
-              <span>💬</span> Join WhatsApp Group
-            </a>
+            <ul className="cjp-contact-list">
+              <li><span>Email</span><a href="mailto:contact@cockroachjantaparty.org">contact@cockroachjantaparty.org</a></li>
+              <li><span>Press</span><a href="mailto:contact@cockroachjantaparty.org">contact@cockroachjantaparty.org</a></li>
+              <li><span>Headquarters</span><p>Wherever the wifi works.</p></li>
+              <li><span>Founder</span><p>Abhijeet Dipke — Founder &amp; Convenor</p></li>
+            </ul>
           </div>
 
-          <form className="cjp-form" onSubmit={onSubmit}>
-            {submitted ? (
-              <div className="cjp-success">
-                <div style={{ fontSize: 48 }}>🪳✨</div>
-                <h3>Welcome to the Army, {form.name || "Comrade"}!</h3>
-                <p>You are now officially unkillable.</p>
-              </div>
-            ) : (
-              <>
-                <label>
-                  <span>नाम / Name</span>
-                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Apna asli naam" />
-                </label>
-                <label>
-                  <span>Phone</span>
-                  <input required type="tel" pattern="[0-9+ ]{7,15}" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+91…" />
-                </label>
-                <label>
-                  <span>City / शहर</span>
-                  <input required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} placeholder="Delhi, Patna, Bengaluru…" />
-                </label>
-                <label>
-                  <span>Why join the Cockroach Army?</span>
-                  <textarea required rows={3} value={form.why} onChange={(e) => setForm({ ...form, why: e.target.value })} placeholder="Kyunki main bhi survivor hoon…" />
-                </label>
-                <button type="submit" className="cjp-btn cjp-btn-primary cjp-btn-block">
-                  Become a Cockroach 🪳
-                </button>
-              </>
-            )}
-          </form>
+          <div className="cjp-form">
+            <div className="cjp-form-head">
+              <strong>Membership Form</strong>
+              <small>Cockroach Janta Party</small>
+            </div>
+            <p className="cjp-form-q"><span>01</span> Name, Phone, Email</p>
+            <p className="cjp-form-q"><span>02</span> Are you chronically online? <em>(Yes / No / Maybe)</em></p>
+            <p className="cjp-form-q"><span>03</span> Are you lazy? <em>(Yes / No / Maybe)</em></p>
+            <p className="cjp-form-q"><span>04</span> Do you identify as a "cockroach" as defined by the Hon'ble CJI?</p>
+            <p className="cjp-form-q"><span>05</span> Mention your Twitter handle to join the Cockroach Janta Party</p>
+            <a href={JOIN_FORM_URL} target="_blank" rel="noreferrer" className="cjp-btn cjp-btn-primary cjp-btn-block">
+              Open Membership Form →
+            </a>
+            <small className="cjp-form-note">Hosted on Google Forms. Never submit passwords.</small>
+          </div>
         </div>
       </section>
 
@@ -268,20 +285,20 @@ function Index() {
             <span className="cjp-logo-mark">🪳</span>
             <div>
               <strong>Cockroach Janta Party</strong>
-              <small>We Survive Everything — Even Indian Politics</small>
+              <small>Voice of the Lazy &amp; Unemployed</small>
             </div>
           </div>
           <div className="cjp-socials">
-            <a aria-label="WhatsApp" href="#">💬</a>
-            <a aria-label="Instagram" href="#">📸</a>
+            <a aria-label="Email" href="mailto:contact@cockroachjantaparty.org">✉️</a>
             <a aria-label="Twitter" href="#">🐦</a>
+            <a aria-label="Instagram" href="#">📸</a>
             <a aria-label="YouTube" href="#">▶️</a>
           </div>
           <p className="cjp-made">
-            Made with ❤️ and chitin by a proud Cockroach Janta Party member.
+            Sponsored by no one. Funded by nothing. HQ: wherever the wifi works.
           </p>
           <p className="cjp-disclaimer">
-            This is a satirical website. Not affiliated with any real political party. No cockroaches were harmed.
+            Filed under General Disgruntlement. Now accepting rants, retweets, and resentment.
           </p>
         </div>
       </footer>
@@ -481,4 +498,44 @@ const cjpStyles = `
   .cjp-socials a:hover { background: var(--saffron); transform: translateY(-3px); }
   .cjp-made { color: var(--paper); font-weight: 600; margin: 0; }
   .cjp-disclaimer { color: var(--muted); font-size: 0.75rem; max-width: 540px; margin: 0; }
+
+  /* EYEBROW + EXTRAS */
+  .cjp-eyebrow { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--saffron); font-weight: 700; margin: 0 0 0.75rem; }
+  .cjp-fineprint { margin-top: 1.5rem; color: var(--muted); font-size: 0.9rem; font-style: italic; max-width: 720px; }
+
+  /* HERO QUOTE */
+  .cjp-quote {
+    position: absolute; bottom: -10px; right: -10px;
+    background: var(--paper); color: #1a1a1a; padding: 0.75rem 1rem; border-radius: 10px;
+    font-size: 0.85rem; line-height: 1.35; max-width: 200px; transform: rotate(3deg);
+    box-shadow: 0 12px 30px -10px rgba(0,0,0,0.6);
+    border: 2px solid var(--saffron);
+  }
+  @media (max-width: 860px) { .cjp-quote { position: static; transform: none; margin: 1rem auto 0; } }
+
+  /* MARQUEE */
+  .cjp-marquee { margin-top: 3rem; padding: 0.9rem 0; background: var(--saffron); color: #1a0d00; overflow: hidden; white-space: nowrap; border-top: 2px solid #1a0d00; border-bottom: 2px solid #1a0d00; font-weight: 800; letter-spacing: 0.05em; font-size: 0.9rem; position: relative; }
+  .cjp-marquee-track { display: inline-block; animation: cjp-marquee 28s linear infinite; }
+  .cjp-marquee-track span { padding-right: 1rem; }
+  @keyframes cjp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* CONTACT LIST */
+  .cjp-contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.85rem; }
+  .cjp-contact-list li { display: grid; grid-template-columns: 130px 1fr; gap: 0.75rem; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid var(--green); }
+  .cjp-contact-list span { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+  .cjp-contact-list a { color: var(--saffron); word-break: break-all; }
+  .cjp-contact-list p { margin: 0; color: var(--paper); }
+  @media (max-width: 520px) { .cjp-contact-list li { grid-template-columns: 1fr; gap: 0.25rem; } }
+
+  /* FORM CARD */
+  .cjp-form-head { padding-bottom: 0.75rem; border-bottom: 1px dashed rgba(255,255,255,0.15); margin-bottom: 0.5rem; }
+  .cjp-form-head strong { display: block; font-size: 1.05rem; }
+  .cjp-form-head small { color: var(--muted); font-size: 0.8rem; }
+  .cjp-form-q { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; margin: 0; padding: 0.5rem 0; color: var(--paper); font-size: 0.95rem; border-bottom: 1px dashed rgba(255,255,255,0.06); }
+  .cjp-form-q span { font-family: 'Courier New', monospace; color: var(--saffron); font-weight: 900; }
+  .cjp-form-q em { color: var(--muted); font-style: italic; }
+  .cjp-form-note { color: var(--muted); font-size: 0.75rem; text-align: center; }
+
+  /* MANIFESTO TWEAK (no icon column) */
+  .cjp-manifesto li { grid-template-columns: auto 1fr; }
 `;
