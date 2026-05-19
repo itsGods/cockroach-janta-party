@@ -6,8 +6,90 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Cockroach Janta Party — Voice of the Lazy & Unemployed" },
       { name: "description", content: "A political party for the people the system forgot to count. Five demands. Zero sponsors. One large, stubborn swarm. They tried to step on us. We came back." },
+      { name: "keywords", content: "Cockroach Janta Party, CJP, Indian political party, satirical political party India, Voice of the Lazy and Unemployed, Abhijeet Dipke, Indian politics, anti-establishment India, youth political party India, cockroach party" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "author", content: "Cockroach Janta Party" },
+      { name: "theme-color", content: "#0d1a12" },
       { property: "og:title", content: "Cockroach Janta Party (CJP)" },
       { property: "og:description", content: "Voice of the Lazy & Unemployed. Five demands. Zero sponsors. They tried to step on us — we came back." },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Cockroach Janta Party" },
+      { property: "og:url", content: "https://cockroach-janta-party.lovable.app/" },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Cockroach Janta Party (CJP) — Voice of the Lazy & Unemployed" },
+      { name: "twitter:description", content: "Five demands. Zero sponsors. One large, stubborn swarm. They tried to step on us — we came back." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cockroach-janta-party.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://cockroach-janta-party.lovable.app/#org",
+              name: "Cockroach Janta Party",
+              alternateName: ["CJP", "Cockroach Janta Party (CJP)"],
+              url: "https://cockroach-janta-party.lovable.app/",
+              email: "contact@cockroachjantaparty.org",
+              slogan: "Voice of the Lazy & Unemployed",
+              description:
+                "Cockroach Janta Party (CJP) is a satirical Indian political movement for the people the system forgot to count. Five demands. Zero sponsors.",
+              founder: { "@type": "Person", name: "Abhijeet Dipke" },
+              areaServed: "IN",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://cockroach-janta-party.lovable.app/#website",
+              url: "https://cockroach-janta-party.lovable.app/",
+              name: "Cockroach Janta Party",
+              inLanguage: "en-IN",
+              publisher: { "@id": "https://cockroach-janta-party.lovable.app/#org" },
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is the Cockroach Janta Party?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Cockroach Janta Party (CJP) is a satirical Indian political party — a movement for the lazy, the unemployed and the chronically online. Five demands, zero corporate sponsors.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Who founded the Cockroach Janta Party?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "The Cockroach Janta Party was founded by Abhijeet Dipke, who serves as Founder & Convenor.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I join the Cockroach Janta Party?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Membership is free and lifelong. Fill in the membership form linked on the homepage. No fees, no selfies with the leader, no missed call to register.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What are the five demands of the CJP?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No Rajya Sabha for retired CJIs; vote tampering treated under UAPA; 50% reservation for women without expanding Parliament; cancellation of Ambani and Adani media licences; and a 20-year ban on political defectors.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      },
     ],
   }),
 });
