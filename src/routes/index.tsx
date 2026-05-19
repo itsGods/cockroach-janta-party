@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -93,8 +94,6 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
-
-import { useEffect, useRef } from "react";
 
 /* ============ MASCOT — hand-drawn cockroach ============ */
 function Roach({ size = 280 }: { size?: number }) {
