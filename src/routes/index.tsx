@@ -498,4 +498,44 @@ const cjpStyles = `
   .cjp-socials a:hover { background: var(--saffron); transform: translateY(-3px); }
   .cjp-made { color: var(--paper); font-weight: 600; margin: 0; }
   .cjp-disclaimer { color: var(--muted); font-size: 0.75rem; max-width: 540px; margin: 0; }
+
+  /* EYEBROW + EXTRAS */
+  .cjp-eyebrow { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--saffron); font-weight: 700; margin: 0 0 0.75rem; }
+  .cjp-fineprint { margin-top: 1.5rem; color: var(--muted); font-size: 0.9rem; font-style: italic; max-width: 720px; }
+
+  /* HERO QUOTE */
+  .cjp-quote {
+    position: absolute; bottom: -10px; right: -10px;
+    background: var(--paper); color: #1a1a1a; padding: 0.75rem 1rem; border-radius: 10px;
+    font-size: 0.85rem; line-height: 1.35; max-width: 200px; transform: rotate(3deg);
+    box-shadow: 0 12px 30px -10px rgba(0,0,0,0.6);
+    border: 2px solid var(--saffron);
+  }
+  @media (max-width: 860px) { .cjp-quote { position: static; transform: none; margin: 1rem auto 0; } }
+
+  /* MARQUEE */
+  .cjp-marquee { margin-top: 3rem; padding: 0.9rem 0; background: var(--saffron); color: #1a0d00; overflow: hidden; white-space: nowrap; border-top: 2px solid #1a0d00; border-bottom: 2px solid #1a0d00; font-weight: 800; letter-spacing: 0.05em; font-size: 0.9rem; position: relative; }
+  .cjp-marquee-track { display: inline-block; animation: cjp-marquee 28s linear infinite; }
+  .cjp-marquee-track span { padding-right: 1rem; }
+  @keyframes cjp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* CONTACT LIST */
+  .cjp-contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.85rem; }
+  .cjp-contact-list li { display: grid; grid-template-columns: 130px 1fr; gap: 0.75rem; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid var(--green); }
+  .cjp-contact-list span { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+  .cjp-contact-list a { color: var(--saffron); word-break: break-all; }
+  .cjp-contact-list p { margin: 0; color: var(--paper); }
+  @media (max-width: 520px) { .cjp-contact-list li { grid-template-columns: 1fr; gap: 0.25rem; } }
+
+  /* FORM CARD */
+  .cjp-form-head { padding-bottom: 0.75rem; border-bottom: 1px dashed rgba(255,255,255,0.15); margin-bottom: 0.5rem; }
+  .cjp-form-head strong { display: block; font-size: 1.05rem; }
+  .cjp-form-head small { color: var(--muted); font-size: 0.8rem; }
+  .cjp-form-q { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; margin: 0; padding: 0.5rem 0; color: var(--paper); font-size: 0.95rem; border-bottom: 1px dashed rgba(255,255,255,0.06); }
+  .cjp-form-q span { font-family: 'Courier New', monospace; color: var(--saffron); font-weight: 900; }
+  .cjp-form-q em { color: var(--muted); font-style: italic; }
+  .cjp-form-note { color: var(--muted); font-size: 0.75rem; text-align: center; }
+
+  /* MANIFESTO TWEAK (no icon column) */
+  .cjp-manifesto li { grid-template-columns: auto 1fr; }
 `;
